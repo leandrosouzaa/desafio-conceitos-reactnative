@@ -14,15 +14,10 @@ import Item from './components/Item'
 export default function App() {
   const [repositories, setRepositories] = useState([]);
 
-  async function handleLikeRepository(id) {
-    
-  }
-
   const loadRepositories = async () => {
     const response = await api.get('/repositories');
     
     await setRepositories(response.data);
-    console.log(repositories)
   };
 
   useEffect(() => {

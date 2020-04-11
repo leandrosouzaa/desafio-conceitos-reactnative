@@ -17,7 +17,6 @@ export default function Item({data :r}) {
          <Text style={styles.repository}>{r.title}</Text>
             
             <View style={styles.techsContainer}>   
-
                <FlatList
                   data={r.techs}
                   horizontal={true}
@@ -33,7 +32,6 @@ export default function Item({data :r}) {
             <View style={styles.likesContainer}>
             <Text
                style={styles.likeText}
-               // Remember to replace "1" below with repository ID: {`repository-likes-${repository.id}`}
                testID={`repository-likes-${r.id}`}
             >
                {likes} curtidas
@@ -43,7 +41,6 @@ export default function Item({data :r}) {
             <TouchableOpacity
             style={styles.button}
             onPress={() => handleLikeRepository()}
-            // Remember to replace "1" below with repository ID: {`like-button-${repository.id}`}
             testID={`like-button-${r.id}`}
             >
             <Text style={styles.buttonText}>🔥</Text>
