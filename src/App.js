@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import {
   SafeAreaView,
@@ -10,9 +10,15 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import api from './services/api'
+
 export default function App() {
   async function handleLikeRepository(id) {
     // Implement "Like Repository" functionality
+  }
+
+  const loadRepositories = async () => {
+
   }
 
   return (
@@ -47,7 +53,7 @@ export default function App() {
             // Remember to replace "1" below with repository ID: {`like-button-${repository.id}`}
             testID={`like-button-1`}
           >
-            <Text style={styles.buttonText}>Curtir</Text>
+            <Text style={styles.buttonText}>🔥</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -65,6 +71,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     backgroundColor: "#fff",
     padding: 20,
+    borderTopLeftRadius:50,
+    borderBottomRightRadius:50,
   },
   repository: {
     fontSize: 32,
@@ -95,13 +103,16 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 10,
+    borderRadius:10,
+    backgroundColor: "#7159c1",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   buttonText: {
-    fontSize: 14,
+    fontSize: 21,
     fontWeight: "bold",
     marginRight: 10,
     color: "#fff",
-    backgroundColor: "#7159c1",
-    padding: 15,
+    padding: 10,
   },
 });
